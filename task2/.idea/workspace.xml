@@ -32,11 +32,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WebDriver_Onliner.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="WebDriver_Onliner.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/WebDriver_Onliner.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-166">
-              <caret line="19" column="18" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
+            <state relative-caret-position="335">
+              <caret line="38" column="75" selection-start-line="38" selection-start-column="75" selection-end-line="38" selection-end-column="75" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -44,36 +44,29 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainUnathorizedPage.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/MainUnathorizedPage.java">
+      <file leaf-file-name="MainPage.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/MainPage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="32" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="JSONReader.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/JSONReader.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="327">
-              <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+            <state relative-caret-position="170">
+              <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#readJSONFile#0;class#JSONReader#0" expanded="false" />
+                <element signature="e#330#331#0" expanded="true" />
+                <element signature="e#366#367#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DriverSingleton.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/DriverSingleton.java">
+      <file leaf-file-name="LoginPage.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/LoginPage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="201">
-              <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+            <state relative-caret-position="303">
+              <caret line="24" column="35" selection-start-line="24" selection-start-column="35" selection-end-line="24" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#622#623#0" expanded="true" />
+                <element signature="e#658#659#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -102,7 +95,11 @@
         <option value="$PROJECT_DIR$/src/main/java/DriverFactory.java" />
         <option value="$PROJECT_DIR$/src/main/java/JSONReader.java" />
         <option value="$PROJECT_DIR$/src/main/resources/config.json" />
+        <option value="$PROJECT_DIR$/src/main/java/MainUnathorizedPage.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/config.properties" />
         <option value="$PROJECT_DIR$/src/test/java/WebDriver_Onliner.java" />
+        <option value="$PROJECT_DIR$/src/main/java/MainPage.java" />
+        <option value="$PROJECT_DIR$/src/main/java/LoginPage.java" />
       </list>
     </option>
   </component>
@@ -586,34 +583,34 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="WebDriver_Onliner_test - 2016.10.12 at 19h 36m 56s.xml">
-      <configuration name="WebDriver_Onliner.test" configurationId="TestNG" />
+    <history-entry file="WebDriver_Onliner - 2016.10.12 at 21h 46m 26s.xml">
+      <configuration name="WebDriver_Onliner" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="WebDriver_Onliner_test - 2016.10.12 at 19h 54m 40s.xml">
-      <configuration name="WebDriver_Onliner.test" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="WebDriver_Onliner_test - 2016.10.12 at 19h 55m 54s.xml">
-      <configuration name="WebDriver_Onliner.test" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="WebDriver_Onliner_test - 2016.10.12 at 19h 56m 28s.xml">
-      <configuration name="WebDriver_Onliner.test" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="WebDriver_Onliner_test - 2016.10.12 at 19h 56m 53s.xml">
-      <configuration name="WebDriver_Onliner.test" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="WebDriver_Onliner_test - 2016.10.12 at 20h 03m 53s.xml">
-      <configuration name="WebDriver_Onliner.test" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="WebDriver_Onliner_test - 2016.10.12 at 20h 08m 09s.xml">
-      <configuration name="WebDriver_Onliner.test" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="WebDriver_Onliner_test - 2016.10.12 at 20h 49m 12s.xml">
-      <configuration name="WebDriver_Onliner.test" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="WebDriver_Onliner_test - 2016.10.12 at 20h 50m 29s.xml">
-      <configuration name="WebDriver_Onliner.test" configurationId="TestNG" />
+    <history-entry file="WebDriver_Onliner - 2016.10.12 at 21h 47m 05s.xml">
+      <configuration name="WebDriver_Onliner" configurationId="TestNG" />
     </history-entry>
     <history-entry file="WebDriver_Onliner_test - 2016.10.12 at 20h 53m 22s.xml">
+      <configuration name="WebDriver_Onliner.test" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="WebDriver_Onliner_test - 2016.10.12 at 21h 36m 16s.xml">
+      <configuration name="WebDriver_Onliner.test" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="WebDriver_Onliner_test - 2016.10.12 at 21h 59m 00s.xml">
+      <configuration name="WebDriver_Onliner.test" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="WebDriver_Onliner_test - 2016.10.12 at 21h 59m 36s.xml">
+      <configuration name="WebDriver_Onliner.test" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="WebDriver_Onliner_test - 2016.10.12 at 22h 00m 16s.xml">
+      <configuration name="WebDriver_Onliner.test" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="WebDriver_Onliner_test - 2016.10.12 at 22h 00m 46s.xml">
+      <configuration name="WebDriver_Onliner.test" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="WebDriver_Onliner_test - 2016.10.12 at 22h 03m 53s.xml">
+      <configuration name="WebDriver_Onliner.test" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="WebDriver_Onliner_test - 2016.10.12 at 22h 04m 35s.xml">
       <configuration name="WebDriver_Onliner.test" configurationId="TestNG" />
     </history-entry>
   </component>
@@ -660,15 +657,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/WebDriver_Onliner.java</url>
-          <line>36</line>
-          <properties />
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-      <option name="time" value="5" />
+      <option name="time" value="6" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -701,28 +690,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/DriverSingleton.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/seleniumhq/selenium/selenium-api/2.53.0/selenium-api-2.53.0.jar!/org/openqa/selenium/SearchContext.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="8" selection-start-line="17" selection-start-column="8" selection-end-line="21" selection-end-column="21" />
+        <state relative-caret-position="102">
+          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/config.properties">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/seleniumhq/selenium/selenium-api/2.53.0/selenium-api-2.53.0.jar!/org/openqa/selenium/TakesScreenshot.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="1" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+        <state relative-caret-position="102">
+          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/seleniumhq/selenium/selenium-api/2.53.0/selenium-api-2.53.0.jar!/org/openqa/selenium/WebElement.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-102">
+          <caret line="15" column="58" selection-start-line="15" selection-start-column="58" selection-end-line="15" selection-end-column="58" />
           <folding />
         </state>
       </provider>
@@ -738,21 +725,63 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/WebDriver_Onliner.java">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-166">
-          <caret line="19" column="18" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
+        <state relative-caret-position="289">
+          <caret line="17" column="8" selection-start-line="17" selection-start-column="8" selection-end-line="21" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/config.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="23" selection-start-line="1" selection-start-column="23" selection-end-line="1" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/DriverSingleton.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/MainUnathorizedPage.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/MainPage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="32" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
-          <folding />
+        <state relative-caret-position="170">
+          <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#330#331#0" expanded="true" />
+            <element signature="e#366#367#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/LoginPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="303">
+          <caret line="24" column="35" selection-start-line="24" selection-start-column="35" selection-end-line="24" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#622#623#0" expanded="true" />
+            <element signature="e#658#659#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/WebDriver_Onliner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="335">
+          <caret line="38" column="75" selection-start-line="38" selection-start-column="75" selection-end-line="38" selection-end-column="75" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

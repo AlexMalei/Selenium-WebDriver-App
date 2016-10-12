@@ -3,6 +3,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+import sun.applet.Main;
 
 
 import java.util.List;
@@ -27,23 +28,18 @@ public class WebDriver_Onliner {
         webSite = jsonReader.getWebSite();
         loginOnliner = jsonReader.getLoginOnliner();
         passwordOnliner = jsonReader.getPasswordOnliner();
-
     }
-    @Test
-    public void test() throws InterruptedException {
-        driver.get(webSite);
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        WebElement entryBtnElement = driver.findElement(By.xpath("//*[@id='userbar']//*[contains(text(),'Вход ')]"));
-        entryBtnElement.click();
 
-        WebElement authorizingElement = driver.findElement(By.xpath("//*[@id='auth-container__forms']//input[@placeholder='Ник или e-mail']"));
-        authorizingElement.sendKeys(loginOnliner);
-        authorizingElement = driver.findElement(By.xpath("//*[@id='auth-container__forms']//input[@placeholder='Пароль']"));
-        authorizingElement.sendKeys(passwordOnliner);
-        authorizingElement.submit();
+    @Test
+    public void test()  {
+        driver.get(webSite);
+
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        MainPage mainPage = new MainPage(driver);
+        mainPage.clickLoginButton().loginAs(loginOnliner, passwordOnliner);
 
         List<WebElement> popularCategories = driver.findElements(By.xpath("//div[@id='container']//ul[@class='project-navigation__list project-navigation__list_secondary']"));
-        System.out.println(popularCategories);
+
         for (WebElement element : popularCategories){
             System.out.println(element.getText());
         }
