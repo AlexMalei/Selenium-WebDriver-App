@@ -6,8 +6,10 @@ import org.openqa.selenium.WebDriver;
  */
 public class MainPage {
     private final WebDriver driver;
-    private By entryButtonLocator = By.xpath("//*[@id='userbar']//*[contains(text(),'Вход ')]");
-
+    private String entryBtnText = "Вход";
+    private String quitElemText = "Выйти";
+    private By entryButtonLocator = By.xpath(String.format("//*[@id='userbar']//*[contains(text(),%s)]", entryBtnText));
+    private By quitElementLocator = By.xpath(String.format("//*[@id='userbar']//a[contains(text(), %s)]", quitElemText));
     //private Ele
 
     public MainPage(WebDriver driver) {
@@ -18,6 +20,9 @@ public class MainPage {
         driver.findElement(entryButtonLocator).click();
         return new LoginPage(driver);
     }
+
+   // public boolean
+
 
 
 }

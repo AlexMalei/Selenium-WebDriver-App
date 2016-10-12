@@ -1,6 +1,7 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import sun.applet.Main;
@@ -8,6 +9,8 @@ import sun.applet.Main;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
+
+import static org.testng.Assert.assertEquals;
 
 /**
  * Created by a.maley on 12.10.2016.
@@ -28,11 +31,20 @@ public class WebDriver_Onliner {
         webSite = jsonReader.getWebSite();
         loginOnliner = jsonReader.getLoginOnliner();
         passwordOnliner = jsonReader.getPasswordOnliner();
+        driver.get(webSite);
     }
 
     @Test
-    public void test()  {
-        driver.get(webSite);
+    public void onlinerSiteTest_mainPageOpened(){
+        assertEquals(driver.getTitle(), "Onliner.by");
+    }
+    @Test
+    public void onlinerSiteTest_isAuthorized(){
+        MainPage mainPage = new MainPage(driver);
+        mainPage.clickLoginButton().loginAs(loginOnliner, passwordOnliner);
+
+    }
+    /*driver.get(webSite);
 
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         MainPage mainPage = new MainPage(driver);
@@ -51,9 +63,7 @@ public class WebDriver_Onliner {
 
         WebElement unauthorizedElement = driver.findElement(By.xpath("//*[@id='userbar']//a[@class='exit']"));
         unauthorizedElement.click();
-        driver.quit();
-
-    }
+        driver.quit();*/
 
 
 }
