@@ -18,34 +18,24 @@ public class WebDriver_Onliner {
         driver.get(TestUtil.webSite);
     }
 
-    @Test(priority = 1)
-    public void onlinerSiteTest_mainPageOpened(){
-        assertEquals(new MainPage(driver).getTitle(), "Onliner.by");
-    }
-
-    @Test(priority = 2)
-    public void onlinerSiteTest_isAuthorized(){
+    @Test
+    public void onlinerSiteTest_makeLogInOutTestWithSerchingNews(){
         MainPage mainPage = new MainPage(driver);
+
+        assertEquals(mainPage.getTitle(), "Onliner.by");
         assertTrue(mainPage.clickLoginButton().loginAs(TestUtil.loginOnliner, TestUtil.passwordOnliner).isAuthorized());
-    }
 
-    @Test(priority = 3)
-    public void onlinerSiteTest_isCorrectChosenTopic(){
-        MainPage mainPage = new MainPage(driver);
         String expextedTopic = mainPage.getRandomTopic();
-        String actualTopic = mainPage.goRandomTopic(expextedTopic).getTopicOnPageAndReturnMain();
+        TopicPage topicPage = mainPage.goRandomTopic(expextedTopic);
+        String actualTopic = topicPage.getTopicOnPage();
 
         assertEquals(expextedTopic, actualTopic);
-    }
 
-
-    @Test(priority = 4)
-    public void onlinerSiteTest_isLogout(){
-        MainPage mainPage = new MainPage(driver);
+        mainPage = topicPage.returnMainPage();
         mainPage.manageNews();
+
         assertFalse(mainPage.logOut().isAuthorized());
     }
-
 
     @AfterClass
     public void tearDown(){

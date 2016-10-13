@@ -1,7 +1,7 @@
 import org.openqa.selenium.WebDriver;
 
 public class TestUtil {
-    private final static String fileConfigPath = "src\\main\\resources\\config.properties";
+    private final static String fileConfigPath = "src\\test\\resources\\config.properties";
     private static JSONReader jsonReader;
     static WebDriver driver;
     static String webSite;

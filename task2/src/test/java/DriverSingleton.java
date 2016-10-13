@@ -12,15 +12,15 @@ public class DriverSingleton {
             driverSrting = driverSrting.toLowerCase();
 
             if (driverSrting.equals("firefox")) {
-                System.setProperty("webdriver.gecko.driver", "src\\main\\resources\\geckodriver.exe");
+                System.setProperty("webdriver.gecko.driver", "src\\test\\resources\\geckodriver.exe");
                 driver = new FirefoxDriver();
             }
             if (driverSrting.equals("chrome")) {
-                System.setProperty("webdriver.chrome.driver", "src\\main\\resources\\chromedriver.exe");
+                System.setProperty("webdriver.chrome.driver", "src\\test\\resources\\chromedriver.exe");
                 driver = new ChromeDriver();
             }
             if (driverSrting.equals("explorer")) {
-                System.setProperty("webdriver.ie.driver", "src\\main\\resources\\IEDriverServer.exe");
+                System.setProperty("webdriver.ie.driver", "src\\test\\resources\\IEDriverServer.exe");
                 driver = new InternetExplorerDriver();
             }
         }
