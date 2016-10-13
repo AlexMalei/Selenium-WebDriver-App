@@ -8,6 +8,7 @@ public class TestUtil {
     static String loginOnliner;
     static String passwordOnliner;
     static int pageTimeout;
+    static String csvFilePath;
 
     static {
         jsonReader = new JSONReader(fileConfigPath);
@@ -16,5 +17,6 @@ public class TestUtil {
         loginOnliner = jsonReader.getLoginOnliner();
         passwordOnliner = jsonReader.getPasswordOnliner();
         pageTimeout = jsonReader.getPagetTimeout();
+        csvFilePath = jsonReader.getCsvFilePath();
     }
 }

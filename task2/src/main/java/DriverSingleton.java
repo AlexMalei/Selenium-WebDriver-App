@@ -3,9 +3,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 
-/**
- * Created by a.maley on 12.10.2016.
- */
 public class DriverSingleton {
 
     private static  WebDriver driver;

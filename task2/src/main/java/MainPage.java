@@ -1,13 +1,19 @@
+
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.concurrent.TimeUnit;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
-/**
- * Created by a.maley on 12.10.2016.
- */
+
 public class MainPage {
     private final WebDriver driver;
 
@@ -15,10 +21,13 @@ public class MainPage {
     private static String quitElemString = "'Выйти'";
     private static String patterPopularTopics = "//div[@id='container']//ul[@class='project-navigation__list project-navigation__list_secondary']/li";
     private static String patternUserBarLocator = "//*[@id='userbar']//*[contains(text(),%s)]";
+    private static String lineSeparator = " \n";
+
 
     private final By entryButtonLocator = By.xpath(String.format(patternUserBarLocator, entryBtnString));
     private final By quitElementLocator = By.xpath(String.format(patternUserBarLocator, quitElemString));
     private final By mainPopularTopicsLocator = By.xpath(patterPopularTopics);
+    private final By nicknameLocator = By.xpath(".//*[@id='userbar']//*[@class='user-name']/*[contains(@data-bind,'html:')]");
 
     public MainPage(WebDriver driver) {
         this.driver = driver;
@@ -41,13 +50,13 @@ public class MainPage {
     }
 
     public boolean isAuthorized(){
-        /*try {
-            driver.findElement(quitElementLocator);
-            return true;
-        } catch (NoSuchElementException e) {
-            return false;
-        }*/
-        if (driver.findElement(quitElementLocator).isDisplayed()){
+        new WebDriverWait(driver, TestUtil.pageTimeout).until(new ExpectedCondition<Boolean>() {
+            public Boolean apply(WebDriver webDriver) {
+                return ((JavascriptExecutor) driver).executeScript("return document.readyState").equals("complete");
+            }
+        });
+        WebElement currentElement = driver.findElement(nicknameLocator);
+        if (currentElement.isDisplayed()){
             return true;
         }
         else
@@ -59,9 +68,8 @@ public class MainPage {
         return listElements;
     }
 
-
     private WebElement getRandomTopicElement(){
-        Random random = new Random(47);
+        Random random = new Random();
         List<WebElement> topicElementList = getMainCategories();
         return topicElementList.get(random.nextInt(topicElementList.size()));
     }
@@ -75,7 +83,41 @@ public class MainPage {
         return new TopicPage(driver);
     }
 
-    public void manageNews() {
+    private List<String> extractNews(){
         String pageSourse = driver.getPageSource();
+        Pattern pattern = Pattern.compile("class=\"text-i\">([\\s\\S]*?)<");
+        Matcher matcher = pattern.matcher(pageSourse);
+        List<String> listMatches = new ArrayList<String>();
+
+        while (matcher.find()){
+            listMatches.add(matcher.group(1));
+        }
+        return listMatches;
+    }
+
+    public void manageNews() {
+        try {
+            writeNewsCsvFile(extractNews());
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    private void writeNewsCsvFile(List<String> allNews) throws IOException {
+        File file = new File(TestUtil.csvFilePath);
+        file.createNewFile();
+        FileWriter fileWriter = new FileWriter(file);
+        for (String news : allNews){
+            fileWriter.write(news);
+            fileWriter.write(lineSeparator);
+        }
+        fileWriter.flush();
+        fileWriter.close();
+    }
+
+    public String getTitle() {
+        driver.manage().timeouts().pageLoadTimeout(TestUtil.pageTimeout, TimeUnit.SECONDS);
+        return driver.getTitle();
     }
 }

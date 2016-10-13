@@ -11,11 +11,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.util.concurrent.TimeUnit;
 
 
-/**
- * Created by a.maley on 12.10.2016.
- */
 public class LoginPage {
     private final WebDriver driver;
+
     private String loginPlaceholder = "'Ник или e-mail'";
     private String passwordPlaceholder = "'Пароль'";
     private String authorizingField = "//*[@id='auth-container__forms']//input[@placeholder=%s]";
@@ -53,6 +51,7 @@ public class LoginPage {
     private MainPage submitLogin(){
         driver.manage().timeouts().implicitlyWait(TestUtil.pageTimeout, TimeUnit.SECONDS);
         driver.findElement(loginButtonLocator).submit();
+        driver.manage().timeouts().pageLoadTimeout(TestUtil.pageTimeout, TimeUnit.SECONDS);
         return new MainPage(driver);
     }
 

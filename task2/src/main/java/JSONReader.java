@@ -1,13 +1,7 @@
 import org.json.JSONObject;
-
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileReader;
-import java.net.URL;
 
-/**
- * Created by a.maley on 12.10.2016.
- */
 public class JSONReader {
     private JSONObject jsonObject;
 
@@ -51,6 +45,10 @@ public class JSONReader {
 
     public Integer getPagetTimeout(){
         return Integer.parseInt((String) jsonObject.get("pageTimeout"));
+    }
+
+    public String getCsvFilePath(){
+        return (String) jsonObject.get("csvFilePath");
     }
 
 

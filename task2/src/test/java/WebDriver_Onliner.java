@@ -6,9 +6,7 @@ import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertFalse;
 import static org.testng.Assert.assertTrue;
 
-/**
- * Created by a.maley on 12.10.2016.
- */
+
 public class WebDriver_Onliner {
 
     private static  WebDriver driver;
@@ -22,9 +20,8 @@ public class WebDriver_Onliner {
 
     @Test(priority = 1)
     public void onlinerSiteTest_mainPageOpened(){
-        assertEquals(driver.getTitle(), "Onliner.by");
+        assertEquals(new MainPage(driver).getTitle(), "Onliner.by");
     }
-
 
     @Test(priority = 2)
     public void onlinerSiteTest_isAuthorized(){
@@ -38,19 +35,16 @@ public class WebDriver_Onliner {
         String expextedTopic = mainPage.getRandomTopic();
         String actualTopic = mainPage.goRandomTopic(expextedTopic).getTopicOnPageAndReturnMain();
 
-        assertEquals(actualTopic, expextedTopic);
+        assertEquals(expextedTopic, actualTopic);
     }
 
 
     @Test(priority = 4)
-    public void onlinerSiteTest_testLogout(){
+    public void onlinerSiteTest_isLogout(){
         MainPage mainPage = new MainPage(driver);
         mainPage.manageNews();
         assertFalse(mainPage.logOut().isAuthorized());
     }
-
-
-
 
 
     @AfterClass
