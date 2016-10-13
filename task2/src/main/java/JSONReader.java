@@ -49,6 +49,9 @@ public class JSONReader {
         return (String) jsonObject.get("password_onliner");
     }
 
+    public Integer getPagetTimeout(){
+        return Integer.parseInt((String) jsonObject.get("pageTimeout"));
+    }
 
 
 

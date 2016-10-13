@@ -1,16 +1,9 @@
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.testng.Assert;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Test;
-import sun.applet.Main;
+import org.testng.annotations.*;
 
-
-import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
 
 /**
  * Created by a.maley on 12.10.2016.
@@ -19,51 +12,55 @@ public class WebDriver_Onliner {
 
     private static JSONReader jsonReader;
     private final static String fileConfigPath = "src\\main\\resources\\config.properties";
-    private static WebDriver driver;
-    private static String webSite;
-    private static String loginOnliner;
-    private static String passwordOnliner;
+    private static  WebDriver driver;
+
 
     @BeforeClass
     public static void setUp(){
-        jsonReader = new JSONReader(fileConfigPath);
-        driver = DriverSingleton.getDriver(jsonReader.getBrowserName());
-        webSite = jsonReader.getWebSite();
-        loginOnliner = jsonReader.getLoginOnliner();
-        passwordOnliner = jsonReader.getPasswordOnliner();
-        driver.get(webSite);
+        driver = TestUtil.driver;
+        driver.get(TestUtil.webSite);
     }
 
-    @Test
+    @Test(priority = 1)
     public void onlinerSiteTest_mainPageOpened(){
         assertEquals(driver.getTitle(), "Onliner.by");
     }
-    @Test
+
+
+    @Test(priority = 2)
     public void onlinerSiteTest_isAuthorized(){
         MainPage mainPage = new MainPage(driver);
-        mainPage.clickLoginButton().loginAs(loginOnliner, passwordOnliner);
-
+        assertTrue(mainPage.clickLoginButton().loginAs(TestUtil.loginOnliner, TestUtil.passwordOnliner).isAuthorized());
     }
-    /*driver.get(webSite);
 
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+    @Test(priority = 3)
+    public void onlinerSiteTest_isCorrectChosenTopic(){
         MainPage mainPage = new MainPage(driver);
-        mainPage.clickLoginButton().loginAs(loginOnliner, passwordOnliner);
+        String expextedTopic = mainPage.getRandomTopic();
+        String actualTopic = mainPage.goRandomTopic(expextedTopic).getTopicOnPage();
+        assertEquals(actualTopic, expextedTopic);
+    }
 
-        List<WebElement> popularCategories = driver.findElements(By.xpath("//div[@id='container']//ul[@class='project-navigation__list project-navigation__list_secondary']"));
+    @AfterTest(dependsOnMethods = {"onlinerSiteTest_isCorrectChosenTopic"})
+    public void returnToMainPage(){
+        driver.get(TestUtil.webSite);
+    }
 
-        for (WebElement element : popularCategories){
-            System.out.println(element.getText());
-        }
+    @Test(priority = 4)
+    public void onlinerSiteTest_testLogout(){
+        MainPage mainPage = new MainPage(driver);
+        mainPage.manageNews();
+    }
 
 
 
 
 
+    @AfterClass
+    public void tearDown(){
+        driver.quit();
+    }
 
-        WebElement unauthorizedElement = driver.findElement(By.xpath("//*[@id='userbar']//a[@class='exit']"));
-        unauthorizedElement.click();
-        driver.quit();*/
 
 
 }
