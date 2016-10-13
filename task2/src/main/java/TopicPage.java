@@ -11,13 +11,14 @@ public class TopicPage {
         this.driver = driver;
     }
 
-  /*  public MainPage returnMainPage(){
+    public void returnMainPage(){
         driver.get(TestUtil.webSite);
-        return new MainPage(driver);
-    }*/
+    }
 
-    public String getTopicOnPage() {
+    public String getTopicOnPageAndReturnMain() {
         driver.manage().timeouts().implicitlyWait(TestUtil.pageTimeout, TimeUnit.SECONDS);
-        return driver.findElement(topicLocator).getText();
+        String topic = driver.findElement(topicLocator).getText();
+        returnMainPage();
+        return topic;
     }
 }

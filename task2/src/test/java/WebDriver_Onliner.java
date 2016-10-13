@@ -3,6 +3,7 @@ import org.testng.annotations.*;
 
 
 import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertFalse;
 import static org.testng.Assert.assertTrue;
 
 /**
@@ -10,8 +11,6 @@ import static org.testng.Assert.assertTrue;
  */
 public class WebDriver_Onliner {
 
-    private static JSONReader jsonReader;
-    private final static String fileConfigPath = "src\\main\\resources\\config.properties";
     private static  WebDriver driver;
 
 
@@ -37,19 +36,17 @@ public class WebDriver_Onliner {
     public void onlinerSiteTest_isCorrectChosenTopic(){
         MainPage mainPage = new MainPage(driver);
         String expextedTopic = mainPage.getRandomTopic();
-        String actualTopic = mainPage.goRandomTopic(expextedTopic).getTopicOnPage();
+        String actualTopic = mainPage.goRandomTopic(expextedTopic).getTopicOnPageAndReturnMain();
+
         assertEquals(actualTopic, expextedTopic);
     }
 
-    @AfterTest(dependsOnMethods = {"onlinerSiteTest_isCorrectChosenTopic"})
-    public void returnToMainPage(){
-        driver.get(TestUtil.webSite);
-    }
 
     @Test(priority = 4)
     public void onlinerSiteTest_testLogout(){
         MainPage mainPage = new MainPage(driver);
         mainPage.manageNews();
+        assertFalse(mainPage.logOut().isAuthorized());
     }
 
 

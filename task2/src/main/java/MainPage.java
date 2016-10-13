@@ -11,10 +11,10 @@ import java.util.Random;
 public class MainPage {
     private final WebDriver driver;
 
-    private final String entryBtnString = "'Вход '";
-    private final String quitElemString = "'Выйти'";
-    private final String patterPopularTopics = "//div[@id='container']//ul[@class='project-navigation__list project-navigation__list_secondary']/li";
-    private final String patternUserBarLocator = "//*[@id='userbar']//*[contains(text(),%s)]";
+    private static String entryBtnString = "'Вход '";
+    private static String quitElemString = "'Выйти'";
+    private static String patterPopularTopics = "//div[@id='container']//ul[@class='project-navigation__list project-navigation__list_secondary']/li";
+    private static String patternUserBarLocator = "//*[@id='userbar']//*[contains(text(),%s)]";
 
     private final By entryButtonLocator = By.xpath(String.format(patternUserBarLocator, entryBtnString));
     private final By quitElementLocator = By.xpath(String.format(patternUserBarLocator, quitElemString));
@@ -41,12 +41,17 @@ public class MainPage {
     }
 
     public boolean isAuthorized(){
-        try {
+        /*try {
             driver.findElement(quitElementLocator);
             return true;
         } catch (NoSuchElementException e) {
             return false;
+        }*/
+        if (driver.findElement(quitElementLocator).isDisplayed()){
+            return true;
         }
+        else
+            return false;
     }
 
     private List<WebElement> getMainCategories(){
@@ -72,6 +77,5 @@ public class MainPage {
 
     public void manageNews() {
         String pageSourse = driver.getPageSource();
-        
     }
 }
